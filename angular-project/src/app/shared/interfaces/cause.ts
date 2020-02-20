@@ -5,5 +5,5 @@ export interface Cause {
     imageUrl: string;
     name: string;
     amount: number;
-    author: string
+    author: string;
 }

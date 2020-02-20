@@ -13,12 +13,19 @@ export class HeaderComponent implements OnInit {
     return this.userService.isLoged;
   }
 
+  createCauseButton: boolean = false;
+  createEventButton: boolean = false;
+
   constructor(
     private userService: UserService,
     private router: Router
     ) { }
 
   ngOnInit() {
+    if(this.router.url=='/cause' && this.userService.isLoged)
+    this.createCauseButton=true;
+    if(this.router.url=='/event' && this.userService.isLoged)
+    this.createEventButton=true;
   }
 
   logout(){

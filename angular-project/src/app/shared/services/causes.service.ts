@@ -15,6 +15,7 @@ export class CausesService {
     this.http.get<Cause[]>(`causes${id ? `/${id}` : ''}`).subscribe(causes =>
     {
       this.causes=causes;
+      console.log(this.causes)
     })
   }
 
@@ -27,5 +28,9 @@ export class CausesService {
       this.causes=causes;
       console.log(causes)
     })
+  }
+
+  donate(id, amount, value){
+    return this.http.put<Cause>(`causes/donate/${id}`, amount, value);
   }
 }

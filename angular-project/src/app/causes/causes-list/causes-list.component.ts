@@ -16,7 +16,7 @@ export class CausesListComponent implements OnInit {
 
   get causes() {
     this.causesService.causes.map(cause => {
-      if (cause.author !== this.userService.currentUser._id)
+      if (!this.userService.currentUser || cause.author !== this.userService.currentUser._id)
         cause.author = undefined;
       cause.description = cause.description.split(' ').slice(0, 30).join(' ') + '..';
     })

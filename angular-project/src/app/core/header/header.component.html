@@ -7,6 +7,12 @@
         <a routerLink='/cause' class="button">Our causes</a>
         <a routerLink="/event" class="button">Events</a>
         <a routerLink="/about" class="button">About us</a>
+        <ng-container *ngIf="createEventButton">
+            <a routerLink='/event/create' class="create">Create your own event!</a>
+        </ng-container>
+        <ng-container *ngIf="createCauseButton">
+            <a routerLink='/cause/create' class="create">Create your own cause!</a>
+        </ng-container>
     </section>
     <section *ngIf='!isLoged' class="user-buttons">
         <a routerLink="/user/register" class="button">Register</a>

@@ -5,7 +5,14 @@
             <div class='donate-page'>
                 <div class="grate">{{cause.name}} will be very grateful if you help her/him!</div>
                 <img [src]="cause.imageUrl" alt="Your event" />
-                <!-- Slider -->
+                <form #donateFrom="ngForm" (ngSubmit)='donate(donateFrom.value)' class='input-field'>
+                    <input ngModel #donateInput="ngModel" class="inputs" type="string" name="donation"
+                        placeholder="15" pattern="^(?!(?:^[-+]?[0.]+(?:[Ee]|$)))(?!(?:^-))(?:(?:[+-]?)(?=[0123456789.])(?:(?:(?:[0123456789]+)(?:(?:[.])(?:[0123456789]*))?|(?:(?:[.])(?:[0123456789]+))))(?:(?:[Ee])(?:(?:[+-]?)(?:[0123456789]+))|))$"/>
+                    <div *ngIf="donateInput.errors && donateInput.touched" class="error">Your donation should be a posititve
+                        number!
+                    </div>
+                    <button [disabled]="donateFrom.invalid" class="add-money">Donate</button>
+                </form>
             </div>
         </form>
     </div>

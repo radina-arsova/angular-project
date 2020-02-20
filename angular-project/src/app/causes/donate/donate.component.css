@@ -90,3 +90,36 @@
     margin: 80px 0;
     max-width: 400px;
 }
+
+input{
+    border-width: 3px;
+    border-color: green;
+    border-radius: 20px;
+    padding: 7px;
+    font-size: 20px;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-money{
+    display: flex;
+    font-size: 20px;
+    padding: 0.5em;
+    border-radius: 20px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+    background: #7ae898;
+    border: 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-money:hover{
+    background: white;
+    cursor: pointer;
+}

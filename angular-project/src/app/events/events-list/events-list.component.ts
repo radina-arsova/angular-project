@@ -15,7 +15,7 @@ export class EventsListComponent implements OnInit {
 
   get events() {
     this.eventsService.events.map(event => {
-      if (event.author !== this.userService.currentUser._id)
+      if (!this.userService.currentUser || event.author !== this.userService.currentUser._id)
       event.author = undefined;
       event.description = event.description.split(' ').slice(0, 30).join(' ') + '..';
     })

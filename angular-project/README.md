@@ -1,9 +1,5 @@
 # YouForOthers - Angular - Project
 
-A charity website YouForOthers. Build as a web project for the Angular course at SoftUni.
-
-YouForOthers is a charity site designed to help as many people in need as possible. Here you can find all the causes that people have shared, as well as upcoming events related to donating food, clothes, shoes and more. You can also create your own cause or event that will reach more people through this site.
-
 YouForOthers web application has two levels of access to its content: registered user and guest user roles are implemented.
 After registration and subsequent successful Login to the system, a registered user is authorized to access causes or events related information. He may also apply for an event of his choice or donate money from his bank account for any of the causes. The registered user can also create causes or events that he can edit or delete later.
 

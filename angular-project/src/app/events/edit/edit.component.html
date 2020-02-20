@@ -1,0 +1,23 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class='create-page'>
+            <form onSubmit={this.handleSubmit}>
+                <h1>Edit event</h1>                           
+
+                <label class="labels" htmlFor="title">Title:</label>
+                <input class="inputs" type="text" name="title" onChange={this.titleOnChangeHandler} value={this.state.title} />
+                
+
+                <label class="labels" htmlFor="description">Description</label>
+                <textarea class="inputs" type="input" name="description" onChange={this.descriptionOnChangeHandler} value={this.state.description}></textarea>
+            </form>
+            <div class='upload-image'>
+                <label class="labels" htmlFor="imageUrl">New event picture</label>
+                <button id="upload_widget" class="cloudinary-button">Update your photo</button>
+
+                <button class='create-button' type="button" onClick={this.submitHandler}>Edit event</button>
+            </div>
+        </div>
+    </div>
+</div>

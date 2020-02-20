@@ -1,0 +1,94 @@
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Sunshiney&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    background: #a2efb8;
+    width: 100%;
+    height: 70px;
+    color: white;
+    border-radius: 15px 15px 20px 20px;
+}
+
+.logo {
+    display: flex;
+    font-size: 30px;
+    margin: 0.4em 1em;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.logo a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Sunshiney', cursive;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.site-buttons {
+    display: flex;
+    margin-left: 1em;
+    width: 70%;
+    align-items: center;
+}
+
+.user-buttons {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5em;
+}
+
+.site-buttons a{
+    margin-right: 1.5em;
+}
+
+.user-buttons a{
+    margin-left: 1.5em;
+}
+
+.site-buttons a,
+.user-buttons a{
+    display: flex;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.site-buttons .button,
+.user-buttons .button{
+    background: #7ae898;
+    border: 0px;
+}
+
+.site-buttons a:hover,
+.user-buttons a:hover{
+    display: flex;
+    border: 0px;
+    background: #ffffff;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.create{
+    background: transparent;
+    border: 2px solid white;
+}

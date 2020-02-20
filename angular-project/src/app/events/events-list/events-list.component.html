@@ -1,0 +1,35 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div *ngIf="events" class="events-container">
+            <div *ngFor="let event of events">
+                <section class="event">
+                    <div class="image">
+                        <img [src]="event.imageUrl" />
+                    </div>
+                    <div class='event-description'>
+                        <p class="title">{{event.title}}</p>
+                        <p class="description">{{event.description}}</p>
+
+                        <ng-container *ngIf="!owner">
+                            <div *ngIf="isLoged" class="auth">
+                                <button *ngIf="come" type="button" class="comeClicked">Thanks for comming!</button>
+                                <button *ngIf="!come" type="button" class="come">I will come!</button>
+                                <a [routerLink]="['/event/details', event._id]" class="details">Details</a>
+                            </div>
+                        </ng-container>
+
+                        <div *ngIf="owner" class="auth">
+                            <a to="" class="edit">Edit</a>
+                            <a to="" class="delete">Delete</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div *ngIf="!events" class='events-container'>
+            <div class="emty-events">There are not any events yet! Please come back later.</div>
+            <i id="icon" class="far fa-times-circle"></i>
+        </div>
+    </div>
+</div>

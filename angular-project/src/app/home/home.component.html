@@ -1,0 +1,39 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class="main-container">
+            <i class="fas fa-hand-holding-heart"></i>
+            <div class="text">
+                <section>
+                    <p class="title">WANT HELP?</p>
+                    <p class="description descr1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at elementum quam. Aenean tempor
+                        malesuada elit a sagittis.
+                    </p>
+                </section>
+                <section>
+                    <p class="title">WANT TO HELP?</p>
+                    <p class="description">
+                        Vivamus sem elit, facilisis nec pellentesque id, bibendum eget leo. Praesent eget maximus
+                        dui. Pellentesque habitant morbi
+                    </p>
+                </section>
+            </div>
+            <div class="buttons">
+                <div *ngIf='isLoged' class='login-buttons'>
+                    <div class='create-buttons'>
+                        <a routerLink='/cause/create' class="create">Create cause</a>
+                        <div class="or"> or </div>
+                        <a routerLink='/event/create' class="create">Create event</a>
+                    </div>
+                    <div class="causes">
+                        <a routerLink='/cause/' class='view-causes'>Check out our causes</a>
+                    </div>
+                </div>
+                <div *ngIf='!isLoged' class='account-buttons'>
+                    <a routerLink="user/register" class="register-button">Register</a>
+                    <p class="have-account">Already have an account?</p>
+                    <a routerLink="user/login" class="login">Login</a>
+                </div>
+            </div>
+        </div>

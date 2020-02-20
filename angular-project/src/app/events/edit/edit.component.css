@@ -1,0 +1,108 @@
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.full-page{
+    display: flex;
+    width: 1500px;
+    flex-direction: column;
+    border: solid 1px green;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.create-page {
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    height: 91.5vh;
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive;
+    border-radius: 15px;
+}
+
+.create-page form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 0.5em;
+}
+
+.inputs{
+    border-width: 3px;
+    border-color: green;
+    border-radius: 20px;
+    padding: 7px;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.labels{
+    font-size: 25px;
+}
+
+.create-button{
+    display: flex;
+    border: 0px;
+    background: #7ae898;
+    font-size: 20px;
+    padding: 0.5em;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+}
+
+.create-button:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.errors{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: red;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.upload-image{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.successful{
+    margin-top: 10px;
+    font-size: 19px;
+    color: green;
+}
+
+.cloudinary-button{
+    border: 1px solid rgb(11, 100, 11);
+    background: transparent;
+    font-family: 'Handlee', cursive;
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+.cloudinary-button:hover{
+    background: #7ae898;;
+    cursor: pointer;
+}

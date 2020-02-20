@@ -1,0 +1,106 @@
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.full-page{
+    display: flex;
+    width: 1500px;
+    flex-direction: column;
+    border: solid 1px green;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.edit-page {
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    height: 91.5vh;
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive;
+    border-radius: 15px;
+}
+
+.edit-page form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-page h1{
+    font-size: 50px;
+    margin: 0;
+}
+
+.inputs{
+    border-width: 3px;
+    border-color: green;
+    border-radius: 20px;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.labels{
+    font-size: 25px;
+}
+
+.edit-button{
+    display: flex;
+    border: 0px;
+    background: #7ae898;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+    margin-top: 1em;
+}
+
+.edit-button:hover {
+    display: flex;
+    border: 0px;
+    background: #ffffff;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.errors{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: red;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.edit-page form label{
+    margin-top: 1em;
+}
+
+.error{
+    color: red;
+    font-size: 19px;
+}
+
+.password-input{
+    margin-left: 28px;
+}
+
+.edit-page form i:hover{
+    cursor: pointer;
+}
+
+.edit-page form i{
+    margin-left: 10px;
+}

@@ -1,0 +1,32 @@
+<div class="all">
+  <div class='full-page'>
+    <app-header></app-header>
+    <div *ngIf="!causes" class="causes-container">
+      <div class="emty-causes">There are not any causes yet! Please come back later.</div>
+      <i id="icon" class="far fa-times-circle"></i>
+    </div>
+    <div *ngIf="causes" class="causes-container">
+      <div *ngFor="let cause of causes">
+        <section class="cause">
+          <div class="image">
+            <img [src]="cause.imageUrl" />
+          </div>
+          <div class='cause-description'>
+            <p class="title">{{cause.title}}</p>
+            <p class="description">{{cause.description}}</p>
+          </div>
+          <div *ngIf='owner' class="auth">
+            <a class="edit">Edit</a>
+            <a class="delete">Delete</a>
+          </div>
+          <ng-container *ngIf="!owner">
+            <div *ngIf='isLoged' class="auth">
+              <a [routerLink]="['/cause/donate', cause._id]" class="donate">Donate</a>
+              <a [routerLink]="['/cause/details', cause._id]" class="details">Details</a>
+            </div>
+          </ng-container>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

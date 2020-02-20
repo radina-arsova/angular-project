@@ -1,0 +1,13 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class="details-container">
+            <div class="title">{{event.title}}</div>
+            <div class="image">
+                <img [src]="event.imageUrl" alt=" "/>
+            </div>
+            <div class="description">{{event.description}}</div>
+            <div class="balance">There will be {{event.guests.length}} guests</div>
+        </div>
+    </div>
+</div>

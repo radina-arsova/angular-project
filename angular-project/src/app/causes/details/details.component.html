@@ -1,0 +1,14 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+            <div class="details-container">
+                <div class="name">{{cause.name}} need your help!</div>
+                <div class="title">{{cause.title}}</div>
+                <div class="image">
+                    <img [src]='cause.imageUrl' alt=" " />
+                </div>
+                <div class="description">{{cause.description}}</div>
+                <div class="balance">Collected amount for {{cause.name}} is {{cause.amount}} lv.</div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class="profile-container">
+            <div class="title">{{user.username}}`s profile</div>
+            <div class="image">
+                <img [src]="user.imageUrl" alt="Your profile img is here" />
+            </div>
+            <div class="balance">Your bank balance is {{user.balance}} lv.</div>
+            <div class="adaddMoneyInputd">
+                <button type='button' class="add-button" (click)="addMoneyInput()">{{buttonText}}</button>
+                <div *ngIf='addInput'>
+                    <form #addMoneyFrom="ngForm" (ngSubmit)='addMoney(addMoneyFrom.value)' class='input-field'>
+                        <input ngModel #moneyInput="ngModel" class="inputs" id="balance" type="string" name="money"
+                            placeholder="153.25" pattern="^(?!(?:^[-+]?[0.]+(?:[Ee]|$)))(?!(?:^-))(?:(?:[+-]?)(?=[0123456789.])(?:(?:(?:[0123456789]+)(?:(?:[.])(?:[0123456789]*))?|(?:(?:[.])(?:[0123456789]+))))(?:(?:[Ee])(?:(?:[+-]?)(?:[0123456789]+))|))$"/>
+                        <div *ngIf="moneyInput.errors && moneyInput.touched" class="error">Bank balance should be a posititve
+                            number!
+                        </div>
+                        <button [disabled]="addMoneyFrom.invalid" class="add-money">Add</button>
+                    </form>
+                </div>
+            </div>
+            <div class='my-posts'>
+                <section class='all-events'>
+                    <h1>My events</h1>
+                    <div class="events">
+                        <div *ngIf="myEvents" class="events-container">
+                            <div *ngFor="let event of myEvents">
+                                <section class="event">
+                                    <div class="image">
+                                        <img [src]="event.imageUrl" />
+                                    </div>
+                                    <div class='event-description'>
+                                        <p class="title">{{event.title}}</p>
+                                        <p class="description">{{event.description}}</p>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h1>My causes</h1>
+                    <div class="causes">
+                        <div *ngIf="myCauses" class="causes-container">
+                            <div *ngFor="let cause of myCauses">
+                                <section class="cause">
+                                    <div class="image">
+                                        <img [src]="cause.imageUrl" />
+                                    </div>
+                                    <div class='cause-description'>
+                                        <p class="title">{{cause.title}}</p>
+                                        <p class="description">{{cause.description}}</p>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="auth">
+                <a routerLink='/user/edit' class="edit">Edit profile</a>
+                <a (click)='deleteProfile()' type='button' class="delete">Delete profile</a>
+            </div>
+        </div>
+    </div>
+</div>

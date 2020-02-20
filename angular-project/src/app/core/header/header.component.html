@@ -1,0 +1,21 @@
+<div class="header-container">
+    <section class="logo">
+        <i class="fas fa-hand-holding-heart"></i>
+        <a routerLink="/" class="button">YouForOthers</a>
+    </section>
+    <section class="site-buttons">
+        <a routerLink='/cause' class="button">Our causes</a>
+        <a routerLink="/event" class="button">Events</a>
+        <a routerLink="/about" class="button">About us</a>
+    </section>
+    <section *ngIf='!isLoged' class="user-buttons">
+        <a routerLink="/user/register" class="button">Register</a>
+        <a routerLink="/user/login" class="button">Login</a>
+    </section>
+    <section *ngIf='isLoged' class="user-buttons">
+        <a routerLink="/user/profile" class="button">My profile</a>
+        <a (click)='logout()' class="button">Logout</a>
+    </section>
+    <section class="user-buttons">
+    </section>
+</div>

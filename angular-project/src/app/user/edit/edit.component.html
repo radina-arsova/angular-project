@@ -1,0 +1,29 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class='edit-page'>
+            <form onSubmit={this.handleSubmit}>
+                <h1>Edit user</h1>
+
+                <label class="labels" htmlFor="username">New username</label>
+                <input class="inputs" type="text" name="username"  />
+                <div class="error"></div>
+
+
+                <label class="labels" htmlFor="password">New password</label>
+                <div class='password-input'>
+                    <input class="inputs" id="password" name="password" placeholder="●●●●●●●"  />
+                    <i class="far fa-eye" ></i>
+                </div>
+                <div class="error"></div>
+
+                <label class="labels" htmlFor="rePassword">Repeat password</label>
+                <input class="inputs" type="password" placeholder='●●●●●●●' name="rePassword"  />
+                <div class="error"></div>
+
+
+                <button class='edit-button' type="button">Edit user</button>
+            </form>
+        </div>
+    </div>
+</div>

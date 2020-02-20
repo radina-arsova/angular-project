@@ -1,0 +1,48 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class='register-page'>
+            <form #registrationForm="ngForm" (ngSubmit)='registrationHandler(registrationForm.value)'>
+                <h1>Register</h1>
+
+                <label class="labels" for="username">Username</label>
+                <input #usernameInput="ngModel" ngModel class="inputs" id="username" type="text" name="username"
+                    placeholder="JustMyself123..." minlength="4" required />
+                <div *ngIf="usernameInput.errors?.required && usernameInput.touched" class="errors">Username is
+                    required!</div>
+                <div *ngIf="usernameInput.errors?.minlength && usernameInput.touched" class="errors">Username should
+                    be more than 4 chars!</div>
+
+                <label class="labels" for="password">Password</label>
+                <div class='password-input'>
+                    <input ngModel type="password" #passInput="ngModel" #passwordInput class="inputs" id="password"
+                        name="password" placeholder="●●●●●●●" minlength="6" required />
+                    <i class="far fa-eye" (click)="seePassword(passwordInput)"></i>
+                </div>
+                <div *ngIf="passInput.errors?.required && passInput.touched" class="errors">Password is
+                    required!</div>
+                <div *ngIf="passInput.errors?.minlength && passInput.touched" class="errors">Password should
+                    be more than 6 chars!</div>
+
+                <label class="labels" for="repeatPassword">Repeat password</label>
+                <input ngModel #rePasswordInput="ngModel" class="inputs" id="repeatPassword" type="password"
+                    name="repeatPassword" placeholder="●●●●●●●" />
+                <div *ngIf="passInput.value!==rePasswordInput.value && rePasswordInput.touched" class="errors">Passwords
+                    should mach!</div>
+
+                <label class="labels" for="balance">Bank balance</label>
+                <input ngModel #balanceInput="ngModel" class="inputs" id="balance" type="string" name="balance"
+                    placeholder="153.25" pattern="\d*" />
+                <div *ngIf="balanceInput.errors && balanceInput.touched" class="errors">Bank balance should be a number!
+                </div>
+
+                <label class="labels" for="imageUrl">Image:</label>
+                <input #imageUrlInput="ngModel" ngModel class="inputs" type="url" name="imageUrl" required />
+                <div *ngIf="imageUrlInput.errors?.required && imageUrlInput.touched" class="errors">Image url is
+                required!</div>
+
+                <button [disabled]="registrationForm.invalid" class='register-button'>Register</button>
+            </form>
+        </div>
+    </div>
+</div>

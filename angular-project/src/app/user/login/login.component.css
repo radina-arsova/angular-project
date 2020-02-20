@@ -1,0 +1,93 @@
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.full-page{
+    display: flex;
+    width: 1500px;
+    flex-direction: column;
+    border: solid 1px green;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.login-page {
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    height: 92.8vh;
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive;
+    border-radius: 15px;
+}
+
+.login-page form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 0.5em;
+}
+
+.inputs{
+    border-width: 3px;
+    border-color: green;
+    border-radius: 20px;
+    padding: 7px;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.labels{
+    font-size: 25px;
+}
+
+.login-button{
+    display: flex;
+    border: 0px;
+    background: #7ae898;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+}
+
+.login-button:hover {
+    display: flex;
+    border: 0px;
+    background: #ffffff;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.error{
+    font-size: 20px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.password-input{
+    margin-left: 28px;
+}
+
+.login-page form i:hover{
+    cursor: pointer;
+}
+
+.login-page form i{
+    margin-left: 10px;
+}

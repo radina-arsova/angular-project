@@ -1,0 +1,6 @@
+<ng-container *ngIf="isReady">
+    <router-outlet></router-outlet>
+</ng-container>
+<ng-container *ngIf="!isReady">
+    Loading...
+</ng-container>

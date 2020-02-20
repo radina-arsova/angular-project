@@ -1,0 +1,33 @@
+<div class="all">
+    <div class='full-page'>
+        <app-header></app-header>
+        <div class='create-page'>
+            <form #createEventForm="ngForm" (ngSubmit)='createEventHandler(createEventForm.value)'>
+                <h1>Create event</h1>
+
+                <label class="labels" for="title">Title:</label>
+                <input #titleInput="ngModel" ngModel class="inputs" type="text" name="title" minlength="4" required />
+                <div *ngIf="titleInput.errors?.required && titleInput.touched" class="errors">Title is
+                    required!</div>
+                <div *ngIf="titleInput.errors?.minlength && titleInput.touched" class="errors">Title should
+                    be more than 4 chars!</div>
+
+                <label class="labels" for="description">Description</label>
+                <textarea #descriptionInput="ngModel" ngModel class="inputs" type="input" name="description"
+                    minlength="10" required></textarea>
+                <div *ngIf="descriptionInput.errors?.required && descriptionInput.touched" class="errors">Description is
+                    required!</div>
+                <div *ngIf="descriptionInput.errors?.minlength && descriptionInput.touched" class="errors">Description
+                    should
+                    be more than 10 chars!</div>
+
+                <label class="labels" for="imageUrl">Image:</label>
+                <input #imageUrlInput="ngModel" ngModel class="inputs" type="url" name="imageUrl" required />
+                <div *ngIf="imageUrlInput.errors?.required && imageUrlInput.touched" class="errors">Image url is
+                    required!</div>
+
+                <button [disabled]="createEventForm.invalid" class='create-button'>Create event</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.full-page{
+    display: flex;
+    max-width: 1500px;
+    flex-direction: column;
+    border: solid 1px green;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.main-container {
+    display: flex;
+    background-image: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    height: 92vh;
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive;
+    border-radius: 20px 20px 15px 15px;
+}
+
+.main-container section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 70%;
+}
+
+.main-container .title {
+    display: flex;
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin: 20px;
+}
+
+.main-container .description {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    color: #818181;
+    font-size: 30px;
+    margin: 0;
+}
+
+.main-container i {
+    display: flex;
+    font-size: 100px;
+    color: white;
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.main-container .text {
+    display: flex;
+    height: 45%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.main-container .buttons{
+    display: flex;
+    flex-direction: column;
+    height: 35%;
+    width: 100%;
+}
+
+.main-container .account-buttons {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    align-items: center;
+}
+
+.login-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-self: flex-start;
+    height: 30%;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.main-container .register-button,
+.create,
+.view-causes {
+    border: 0px;
+    background: #7ae898;
+    font-size: 17px;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    text-decoration: none;
+    color: black;
+}
+
+.main-container .have-account {
+    margin-top: 20px;
+}
+
+.main-container .login {
+    font-family: 'Handlee', cursive;
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.main-container .register-button:hover,
+.create:hover,
+.view-causes:hover {
+    background: #ffffff;
+}
+
+.create-buttons,
+.causes{
+    display: flex;
+    align-items: baseline;
+}
+
+.create,
+.view-causes{
+    font-size: 20px;
+}
+
+.or{
+    margin: 0 4px;
+}

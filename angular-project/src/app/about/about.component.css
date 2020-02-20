@@ -1,0 +1,62 @@
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.full-page{
+    display: flex;
+    max-width: 1500px;
+    flex-direction: column;
+    border: solid 1px green;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.about-container {
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive;
+    border-radius: 15px;
+}
+
+.about-container i {
+    display: flex;
+    font-size: 100px;
+    color: white;
+    width: 100%;
+    margin: 40px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container h1{
+    margin-left: 2em;
+}
+
+.about-container p{
+    text-indent: 50px;
+}
+
+.about-container section{
+    margin: 0em 10em;
+    padding-bottom: 2em;
+}
+
+.about-container section:first-child{
+    padding-bottom: 4em;
+}
+
+img{
+    width: 500px;
+    border-radius: 50px;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}

@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  currentUser: { username: string; password: string } = undefined;
+  currentUser: { username: string; password: string; balance: number; _id: string } = undefined;
 
   get isLoged() {
     return !!this.currentUser;
@@ -15,32 +15,32 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     this.http.get('user')
-    .subscribe((user: any) => {
-      this.currentUser=user;
-    }, () => {
-      this.currentUser=null;
-    })
+      .subscribe((user: any) => {
+        this.currentUser = user;
+      }, () => {
+        this.currentUser = null;
+      })
   }
 
   login(username: string, password: string) {
-    return this.http.post('user/login', {username, password}).pipe(tap((user: any) =>{
-      this.currentUser=user;
+    return this.http.post('user/login', { username, password }).pipe(tap((user: any) => {
+      this.currentUser = user;
     }));
   }
 
   register(username: string, password: string, imageUrl: string, balance: number) {
-    return this.http.post('user/register', {username, password, imageUrl, balance});
+    return this.http.post('user/register', { username, password, imageUrl, balance });
   }
 
-  logout(){
+  logout() {
     return this.http.post('user/logout', {}).pipe(tap(() => {
       this.currentUser = null;
     }));
   }
 
-  addMoney(balance: number){
-    return this.http.put('user/add', {balance}).pipe(tap(() => {
-      this.currentUser.balance=balance;
+  addMoney(balance: number) {
+    return this.http.put('user/add', { balance }).pipe(tap(() => {
+      this.currentUser.balance = balance;
     }));
   }
 }

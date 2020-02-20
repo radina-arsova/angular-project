@@ -10,12 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CausesListComponent implements OnInit {
 
-  get isLoged(){
+  get isLoged() {
     return this.userService.isLoged;
   }
 
   get causes() {
     this.causesService.causes.map(cause => {
+      if (cause.author !== this.userService.currentUser._id)
+        cause.author = undefined;
       cause.description = cause.description.split(' ').slice(0, 30).join(' ') + '..';
     })
     return this.causesService.causes;
@@ -24,7 +26,7 @@ export class CausesListComponent implements OnInit {
   constructor(
     private causesService: CausesService,
     private userService: UserService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.causesService.load();

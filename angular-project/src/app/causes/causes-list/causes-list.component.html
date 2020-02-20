@@ -15,11 +15,11 @@
             <p class="title">{{cause.title}}</p>
             <p class="description">{{cause.description}}</p>
           </div>
-          <div *ngIf='owner' class="auth">
+          <div *ngIf='cause.author' class="auth">
             <a class="edit">Edit</a>
             <a class="delete">Delete</a>
           </div>
-          <ng-container *ngIf="!owner">
+          <ng-container *ngIf="!cause.author">
             <div *ngIf='isLoged' class="auth">
               <a [routerLink]="['/cause/donate', cause._id]" class="donate">Donate</a>
               <a [routerLink]="['/cause/details', cause._id]" class="details">Details</a>

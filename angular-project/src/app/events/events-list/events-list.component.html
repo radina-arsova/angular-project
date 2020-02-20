@@ -11,7 +11,7 @@
                         <p class="title">{{event.title}}</p>
                         <p class="description">{{event.description}}</p>
 
-                        <ng-container *ngIf="!owner">
+                        <ng-container *ngIf="!event.author">
                             <div *ngIf="isLoged" class="auth">
                                 <button *ngIf="come" type="button" class="comeClicked">Thanks for comming!</button>
                                 <button *ngIf="!come" type="button" class="come">I will come!</button>
@@ -19,7 +19,7 @@
                             </div>
                         </ng-container>
 
-                        <div *ngIf="owner" class="auth">
+                        <div *ngIf="event.author" class="auth">
                             <a to="" class="edit">Edit</a>
                             <a to="" class="delete">Delete</a>
                         </div>

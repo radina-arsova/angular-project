@@ -1,6 +1,6 @@
 # YouForOthers - rest api
 
-A charity website YouForOthers. Build as a web project for the React JS course at SoftUni.
+A charity website YouForOthers. Build as a web project for the Angular course at SoftUni.
 
 ## Resolve Dependencies
 

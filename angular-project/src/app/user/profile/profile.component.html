@@ -37,6 +37,9 @@
                                 </section>
                             </div>
                         </div>
+                        <div *ngIf="!myEvents">
+                            <a routerLink='/event/create' class="add-button">Create yor own event now!</a>
+                        </div>
                     </div>
                 </section>
                 <section>
@@ -54,6 +57,9 @@
                                     </div>
                                 </section>
                             </div>
+                        </div>
+                        <div *ngIf="!myCauses"  class="causes-container">
+                            <a routerLink='/cause/create' class="add-button">Create yor own cause now!</a>
                         </div>
                     </div>
                 </section>

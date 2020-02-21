@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { CausesService } from 'src/app/shared/services/causes.service';
 import { EventsService } from 'src/app/shared/services/events.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private causesService: CausesService,
     private eventsService: EventsService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +39,12 @@ export class ProfileComponent implements OnInit {
   }
 
   deleteProfile() {
+    this.userService.delete().subscribe(() => {
+      this.userService.logout().subscribe(()=>{
+        alert('Your profile was deleted succesfull!');
+        this.router.navigate([''])
+      })
+    })
   }
 
   addMoneyInput() {

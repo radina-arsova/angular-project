@@ -13,6 +13,11 @@ export class DetailsComponent implements OnInit {
     return this.eventsService.events;
   }
 
+  get come(){
+    console.log(this.eventsService.guests)
+    return this.eventsService.guests;
+  }
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private eventsService: EventsService,
@@ -21,6 +26,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.eventsService.load(this.activatedRoute.snapshot.params.id);
+    this.eventsService.checkGuests(this.activatedRoute.snapshot.params.id);
   
     if (!this.event)
       this.router.navigate(['/404'])
@@ -31,11 +37,4 @@ export class DetailsComponent implements OnInit {
       this.eventsService.load(this.activatedRoute.snapshot.params.id);
     })
   }
-
-  come() {
-    this.eventsService.checkGuests(this.event['_id']).subscribe((data) => {
-      console.log(data)
-    })
-  }
-
 }

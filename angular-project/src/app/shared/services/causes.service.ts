@@ -7,7 +7,7 @@ import { Cause } from '../interfaces/cause';
 })
 export class CausesService {
 
-  causes: Cause[];
+  causes: Cause[] = undefined;
 
   constructor(private http: HttpClient) { }
 
@@ -25,8 +25,8 @@ export class CausesService {
 
   loadUsersCauses(){
     return this.http.get<Cause[]>('causes/user').subscribe(causes => {
+      if(causes.length>0)
       this.causes=causes;
-      console.log(causes)
     })
   }
 

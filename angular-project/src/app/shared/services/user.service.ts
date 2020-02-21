@@ -43,4 +43,14 @@ export class UserService {
       this.currentUser.balance = balance;
     }));
   }
+
+  edit(username, password){
+    return this.http.put(`user/edit`, {username, password }).pipe(tap(() => {
+      this.currentUser.username = username;
+    }));;
+  }
+
+  delete(){
+    return this.http.delete('user/delete');
+  }
 }

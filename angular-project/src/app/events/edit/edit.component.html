@@ -2,22 +2,26 @@
     <div class='full-page'>
         <app-header></app-header>
         <div class='create-page'>
-            <form onSubmit={this.handleSubmit}>
-                <h1>Edit event</h1>                           
+            <form #editEventForm="ngForm" (ngSubmit)='editEventHandler(editEventForm.value)'>
+                <h1>Edit event</h1>
 
-                <label class="labels" htmlFor="title">Title:</label>
-                <input class="inputs" type="text" name="title" onChange={this.titleOnChangeHandler} value={this.state.title} />
-                
+                <label class="labels" for="title">Title:</label>
+                <input #titleInput="ngModel" ngModel [value]="event.title" class="inputs" type="text" name="title" minlength="4"/>
+                <div *ngIf="titleInput.errors?.minlength && titleInput.touched" class="errors">Title should
+                    be more than 4 chars!</div>
 
-                <label class="labels" htmlFor="description">Description</label>
-                <textarea class="inputs" type="input" name="description" onChange={this.descriptionOnChangeHandler} value={this.state.description}></textarea>
+                <label class="labels" for="description">Description</label>
+                <textarea #descriptionInput="ngModel" ngModel class="inputs" type="input" name="description"
+                    minlength="10" [value]='event.description'></textarea>
+                <div *ngIf="descriptionInput.errors?.minlength && descriptionInput.touched" class="errors">Description
+                    should
+                    be more than 10 chars!</div>
+
+                <label class="labels" for="imageUrl">Image:</label>
+                <input #imageUrlInput="ngModel" ngModel [value]='event.imageUrl' class="inputs" type="url" name="imageUrl" />
+
+                <button [disabled]="editEventForm.invalid" class='create-button'>Edit event</button>
             </form>
-            <div class='upload-image'>
-                <label class="labels" htmlFor="imageUrl">New event picture</label>
-                <button id="upload_widget" class="cloudinary-button">Update your photo</button>
-
-                <button class='create-button' type="button" onClick={this.submitHandler}>Edit event</button>
-            </div>
         </div>
     </div>
 </div>

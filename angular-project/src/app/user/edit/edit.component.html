@@ -2,27 +2,24 @@
     <div class='full-page'>
         <app-header></app-header>
         <div class='edit-page'>
-            <form onSubmit={this.handleSubmit}>
+            <form #editUserForm="ngForm" (ngSubmit)="editHandler(editUserForm.value)">
                 <h1>Edit user</h1>
 
-                <label class="labels" htmlFor="username">New username</label>
-                <input class="inputs" type="text" name="username"  />
-                <div class="error"></div>
+                <label class="labels" for="username">New username:</label>
+                <input #usernameInput="ngModel" ngModel [value]="user.username" class="inputs" type="text" name="username"
+                    minlength="4" />
+                <div *ngIf="usernameInput.errors?.minlength && usernameInput.touched" class="errors">Title should
+                    be more than 4 chars!</div>
 
+                    <label class="labels" for="password">New password</label>
+                    <input #passwordInput="ngModel" ngModel class="inputs" type="password" placeholder='●●●●●●●'
+                        name="password" />
 
-                <label class="labels" htmlFor="password">New password</label>
-                <div class='password-input'>
-                    <input class="inputs" id="password" name="password" placeholder="●●●●●●●"  />
-                    <i class="far fa-eye" ></i>
-                </div>
-                <div class="error"></div>
+                <label class="labels" for="rePassword">Repeat password</label>
+                <input #rePasswordInput="ngModel" ngModel class="inputs" type="password" placeholder='●●●●●●●'
+                    name="rePassword" />
 
-                <label class="labels" htmlFor="rePassword">Repeat password</label>
-                <input class="inputs" type="password" placeholder='●●●●●●●' name="rePassword"  />
-                <div class="error"></div>
-
-
-                <button class='edit-button' type="button">Edit user</button>
+                <button class='edit-button'>Edit user</button>
             </form>
         </div>
     </div>

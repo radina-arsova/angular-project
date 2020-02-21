@@ -11,6 +11,7 @@
                     <div *ngIf="donateInput.errors && donateInput.touched" class="error">Your donation should be a posititve
                         number!
                     </div>
+                    <div class="error">{{error}}</div>
                     <button [disabled]="donateFrom.invalid" class="add-money">Donate</button>
                 </form>
             </div>

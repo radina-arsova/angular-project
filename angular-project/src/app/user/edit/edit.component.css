@@ -106,3 +106,7 @@
 .edit-page form i{
     margin-left: 10px;
 }
+
+button.edit-button[disabled] {
+    background-color: #ddd;
+ }

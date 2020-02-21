@@ -6,25 +6,20 @@
                 <h1>Edit cause</h1>
 
                 <label class="labels" for="title">New title:</label>
-                <input #titleInput="ngModel" ngModel class="inputs" type="text" name="title" [value]="cause.title" minlength="4" />
-                <div *ngIf="titleInput.errors?.required && titleInput.touched" class="errors">Title is
-                    required!</div>
+                <input #titleInput="ngModel" ngModel class="inputs" type="text" name="title" [value]="cause.title"
+                    minlength="4" />
                 <div *ngIf="titleInput.errors?.minlength && titleInput.touched" class="errors">Title should
                     be more than 4 chars!</div>
 
                 <label class="labels" for="description">New description</label>
-                <textarea #descriptionInput="ngModel" ngModel class="inputs" type="input" name="description" [value]="cause.description"
-                    minlength="10"></textarea>
-                <div *ngIf="descriptionInput.errors?.required && descriptionInput.touched" class="errors">Description is
-                    required!</div>
+                <textarea #descriptionInput="ngModel" ngModel class="inputs" type="input" name="description"
+                    [value]="cause.description" minlength="10"></textarea>
                 <div *ngIf="descriptionInput.errors?.minlength && descriptionInput.touched" class="errors">Description
-                    should
-                    be more than 10 chars!</div>
+                    should be more than 10 chars!</div>
 
                 <label class="labels" for="imageUrl">New image:</label>
-                <input #imageUrlInput="ngModel" ngModel class="inputs" type="url" name="imageUrl" [value]="cause.imageUrl" />
-                <div *ngIf="imageUrlInput.errors?.required && imageUrlInput.touched" class="errors">Image url is
-                    required!</div>
+                <input #imageUrlInput="ngModel" ngModel class="inputs" type="url" name="imageUrl"
+                    [value]="cause.imageUrl" />
 
                 <button [disabled]="editCauseForm.invalid" class='create-button'>Edit cause</button>
             </form>

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  error: string = undefined;
+
   constructor(
     private userService: UserService,
     private router: Router
@@ -20,7 +22,9 @@ export class LoginComponent implements OnInit {
   loginHandler({username, password}: {username: string, password: string}) {
     this.userService.login(username, password).subscribe(() => {
       this.router.navigate(['']);
-    }, console.error);
+    }, (error) => {
+      this.error=error.error;
+    });
   }
 
   seePassword(passwordInput: any){

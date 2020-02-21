@@ -14,14 +14,6 @@
     border-radius: 15px 15px 20px 20px;
 }
 
-.logo {
-    display: flex;
-    font-size: 30px;
-    margin: 0.4em 1em;
-    align-items: baseline;
-    cursor: pointer;
-}
-
 .logo a{
     font-size: 30px;
     text-decoration: none;
@@ -32,20 +24,27 @@
     cursor: pointer;
 }
 
+.logo {
+    display: flex;
+    font-size: 30px;
+    margin: 0.4em 1em;
+    align-items: baseline;
+    cursor: pointer;
+    width: 15%;
+}
+
 .site-buttons {
     display: flex;
     margin-left: 1em;
-    width: 70%;
+    width: 55%;
     align-items: center;
 }
 
 .user-buttons {
     display: flex;
     align-items: center;
-    width: 30%;
-    display: flex;
     justify-content: flex-end;
-    margin-right: 5em;
+    padding-left: 5em;
 }
 
 .site-buttons a{

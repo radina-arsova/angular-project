@@ -82,6 +82,7 @@
     height: 70%;
     width: 100%;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .login-buttons{
@@ -131,6 +132,7 @@
 .causes{
     display: flex;
     align-items: baseline;
+    margin-right: 40px;
 }
 
 .create,

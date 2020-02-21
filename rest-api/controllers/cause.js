@@ -66,8 +66,25 @@ module.exports = {
 
     delete: (req, res, next) => {
         const id = req.params.id;
+
+        const { _id } = req.user;
+        let removedCause;
+
+        models.Cause.findById({_id: id}).then((cause) => {
+            removedCause=cause._id;
+        })
+
         models.Cause.deleteOne({ _id: id })
-            .then((removedCause) => res.send(removedCause))
+        .then(() => {
+            models.User.findById(_id).then(user => {
+                let usersCause = user.causes;
+                usersCause.splice(usersCause.indexOf(removedCause), 1)
+                models.User.updateOne({ _id }, { causes: usersCause })
+                    .then(() => res.send(removedCause))
+                    .catch(next)
+            })
+        }
+        )
             .catch(next)
     }
 };

@@ -29,7 +29,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 h1{
@@ -118,21 +118,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .register-page form i{
     margin-left: 10px;
-}
-
-.cloudinary-button{
-    border: 1px solid rgb(11, 100, 11);
-    background: transparent;
-    font-family: 'Handlee', cursive;
-    font-size: 17px;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin-top: 5px;
-}
-
-.cloudinary-button:hover{
-    background: #7ae898;;
-    cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,

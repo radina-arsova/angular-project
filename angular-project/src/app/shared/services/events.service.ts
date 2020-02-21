@@ -29,7 +29,8 @@ export class EventsService {
     return this.http.get<Event[]>('events/user').subscribe(events => {
       if(events.length>0)
       this.events=events;
-      console.log(events)
+      else
+      this.events=undefined;
     })
   }
 

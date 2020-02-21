@@ -6,20 +6,25 @@
                 <h1>Edit user</h1>
 
                 <label class="labels" for="username">New username:</label>
-                <input #usernameInput="ngModel" ngModel [value]="user.username" class="inputs" type="text" name="username"
-                    minlength="4" />
+                <input #usernameInput="ngModel" ngModel [value]="user.username" class="inputs" type="text"
+                    name="username" minlength="4" />
                 <div *ngIf="usernameInput.errors?.minlength && usernameInput.touched" class="errors">Title should
                     be more than 4 chars!</div>
 
-                    <label class="labels" for="password">New password</label>
-                    <input #passwordInput="ngModel" ngModel class="inputs" type="password" placeholder='●●●●●●●'
-                        name="password" />
+                <label class="labels" for="password">New password</label>
+                <input #passwordInput="ngModel" ngModel class="inputs" type="password" placeholder='●●●●●●●'
+                    name="password" minlength="6" />
+                <div *ngIf="passwordInput.errors?.minlength && passwordInput.touched" class="errors">Password should
+                    be more than 6 chars!</div>
 
                 <label class="labels" for="rePassword">Repeat password</label>
                 <input #rePasswordInput="ngModel" ngModel class="inputs" type="password" placeholder='●●●●●●●'
                     name="rePassword" />
+                <div *ngIf="passwordInput.value!==rePasswordInput.value && rePasswordInput.touched" class="errors">
+                    Passwords should mach!</div>
 
-                <button class='edit-button'>Edit user</button>
+
+                <button [disabled]="editUserForm.invalid" class='edit-button'>Edit user</button>
             </form>
         </div>
     </div>

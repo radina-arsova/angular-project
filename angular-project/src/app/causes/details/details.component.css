@@ -58,10 +58,11 @@
     justify-content: center;
     font-size: 25px;
     text-decoration: underline overline rgb(144, 47, 255) 2px;
+    margin-bottom: 1em;
 }
 
 .details-container .description{
-    margin: 5em;
+    margin: 5em 5em 2em 5em;
     font-size: 22px;
     text-indent: 50px;
 }

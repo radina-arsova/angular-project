@@ -69,15 +69,33 @@ module.exports = {
 
     delete: (req, res, next) => {
         const id = req.params.id;
+        const { _id } = req.user;
+        let removedEvent;
+
+        models.Event.findById({_id: id}).then((event) => {
+            removedEvent=event._id;
+        })
+    
         models.Event.deleteOne({ _id: id })
-            .then((removedEvent) => res.send(removedEvent))
+            .then(() => {
+                models.User.findById(_id).then(user => {
+                    let usersEvent = user.events;
+                    usersEvent.splice(usersEvent.indexOf(removedEvent), 1)
+                    models.User.updateOne({ _id }, { events: usersEvent })
+                        .then(() => res.send(removedEvent))
+                        .catch(next)
+                })
+            }
+            )
             .catch(next)
     },
 
     getGuests: (req, res, next) => {
         const { id } = req.params;
-        models.Event.findById(id).then((event)=>{
+        models.Event.findById(id).then((event) => {
             res.send(event.guests);
         })
     }
 };
+
+(removedEvent) => res.send(removedEvent)

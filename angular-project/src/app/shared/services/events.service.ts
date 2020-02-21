@@ -30,9 +30,15 @@ export class EventsService {
     })
   }
 
-  // donate(amount: number){
-  //   return this.http.put(`http://localhost:9999/cause/${this.selectedCause._id}`, {
-  //     body: { collectedAmount: this.selectedCause.collectedAmount + amount }
-  //   });
-  // }
+  delete(id){
+    return this.http.delete(`events/delete/${id}`);
+  }
+
+  come(id){
+    return this.http.put(`events/will-come/${id}`, {});
+  }
+
+  checkGuests(id){
+    return this.http.get(`events/check-guests/${id}`);
+  }
 }

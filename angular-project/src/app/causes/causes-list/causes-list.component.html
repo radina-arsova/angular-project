@@ -16,8 +16,8 @@
             <p class="description">{{cause.description}}</p>
           </div>
           <div *ngIf='cause.author' class="auth">
-            <a class="edit">Edit</a>
-            <a class="delete">Delete</a>
+            <a [routerLink]="['/cause/edit', cause._id]" class="edit">Edit</a>
+            <a (click)="delete(cause._id)" class="delete">Delete</a>
           </div>
           <ng-container *ngIf="!cause.author">
             <div *ngIf='isLoged' class="auth">

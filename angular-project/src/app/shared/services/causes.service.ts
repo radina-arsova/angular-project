@@ -11,7 +11,7 @@ export class CausesService {
 
   constructor(private http: HttpClient) { }
 
-  load(id?: number){
+  load(id?: string){
     this.http.get<Cause[]>(`causes${id ? `/${id}` : ''}`).subscribe(causes =>
     {
       this.causes=causes;
@@ -31,6 +31,14 @@ export class CausesService {
   }
 
   donate(id, amount, value){
-    return this.http.put<Cause>(`causes/donate/${id}`, amount, value);
+    return this.http.put<Cause>(`causes/donate/${id}`, { amount, value });
+  }
+
+  edit(id, name, title, description, imageUrl){
+    return this.http.put<Cause>(`causes/edit/${id}`, { name, title, description, imageUrl });
+  }
+
+  delete(id){
+    return this.http.delete(`causes/delete/${id}`);
   }
 }

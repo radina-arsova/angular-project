@@ -13,15 +13,13 @@
 
                         <ng-container *ngIf="!event.author">
                             <div *ngIf="isLoged" class="auth">
-                                <button *ngIf="come" type="button" class="comeClicked">Thanks for comming!</button>
-                                <button *ngIf="!come" type="button" class="come">I will come!</button>
                                 <a [routerLink]="['/event/details', event._id]" class="details">Details</a>
                             </div>
                         </ng-container>
 
                         <div *ngIf="event.author" class="auth">
-                            <a to="" class="edit">Edit</a>
-                            <a to="" class="delete">Delete</a>
+                            <a [routerLink]="['/event/edit', event._id]" class="edit">Edit</a>
+                            <a (click)="delete(event._id)" class="delete">Delete</a>
                         </div>
                     </div>
                 </section>

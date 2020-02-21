@@ -14,8 +14,6 @@ export class DonateComponent implements OnInit {
     return this.causesService.causes;
   }
 
-  
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private causesService: CausesService,
@@ -24,14 +22,18 @@ export class DonateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.causesService.load(this.activatedRoute.snapshot.params.id);
+    this.causesService.load(this.activatedRoute.snapshot.params.id)
     if(!this.cause || !this.userService.isLoged)
     this.router.navigate(['/404'])
   }
 
   donate(data){
-    console.log(this.amount)
-    console.log(data.donation);
+    const amount = Number(this.cause['amount']) + Number(data.donation);
+    const value = data.donation;
+    this.causesService.donate(this.cause['_id'], amount, value).subscribe(() => {
+      this.router.navigate(['/cause'])
+      alert('Your donation is succesfull!')
+    });
   }
 
 }

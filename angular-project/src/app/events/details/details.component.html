@@ -7,6 +7,8 @@
                 <img [src]="event.imageUrl" alt=" "/>
             </div>
             <div class="description">{{event.description}}</div>
+            <button *ngIf="!come()" class="come" (click)="comeButton(event._id)">You can click here if you want to come!</button>
+            <button *ngIf="come()" class="comeClicked" [disabled]=true>Thanks for comming!</button>
             <div class="balance">There will be {{event.guests.length}} guests</div>
         </div>
     </div>

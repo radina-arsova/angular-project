@@ -21,8 +21,21 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.eventsService.load(this.activatedRoute.snapshot.params.id);
-    if(!this.event)
-    this.router.navigate(['/404'])
+  
+    if (!this.event)
+      this.router.navigate(['/404'])
+  }
+
+  comeButton(id) {
+    this.eventsService.come(id).subscribe(() => {
+      this.eventsService.load(this.activatedRoute.snapshot.params.id);
+    })
+  }
+
+  come() {
+    this.eventsService.checkGuests(this.event['_id']).subscribe((data) => {
+      console.log(data)
+    })
   }
 
 }

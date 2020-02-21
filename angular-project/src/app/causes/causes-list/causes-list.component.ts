@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CausesService } from 'src/app/shared/services/causes.service';
 import { UserService } from 'src/app/shared/services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-causes-list',
@@ -25,7 +25,8 @@ export class CausesListComponent implements OnInit {
 
   constructor(
     private causesService: CausesService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,4 +34,9 @@ export class CausesListComponent implements OnInit {
   }
 
 
+  delete(id) {
+    this.causesService.delete(id).subscribe(() => {
+      this.causesService.load();
+    })
+  }
 }

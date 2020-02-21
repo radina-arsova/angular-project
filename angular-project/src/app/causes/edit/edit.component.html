@@ -2,26 +2,32 @@
     <div class='full-page'>
         <app-header></app-header>
         <div class='create-page'>
-            <form onSubmit={this.handleSubmit}>
+            <form #editCauseForm="ngForm" (ngSubmit)='editCauseHandler(editCauseForm.value)'>
                 <h1>Edit cause</h1>
 
-                <label class="labels" htmlFor="name">This cause is for:</label>
-                <input class="inputs" value={this.state.name} onChange={this.nameOnChangeHandler} />
-                
+                <label class="labels" for="title">New title:</label>
+                <input #titleInput="ngModel" ngModel class="inputs" type="text" name="title" [value]="cause.title" minlength="4" />
+                <div *ngIf="titleInput.errors?.required && titleInput.touched" class="errors">Title is
+                    required!</div>
+                <div *ngIf="titleInput.errors?.minlength && titleInput.touched" class="errors">Title should
+                    be more than 4 chars!</div>
 
-                <label class="labels" htmlFor="title">Title:</label>
-                <input class="inputs" type="text" name="title" onChange={this.titleOnChangeHandler} value={this.state.title} />
-                
+                <label class="labels" for="description">New description</label>
+                <textarea #descriptionInput="ngModel" ngModel class="inputs" type="input" name="description" [value]="cause.description"
+                    minlength="10"></textarea>
+                <div *ngIf="descriptionInput.errors?.required && descriptionInput.touched" class="errors">Description is
+                    required!</div>
+                <div *ngIf="descriptionInput.errors?.minlength && descriptionInput.touched" class="errors">Description
+                    should
+                    be more than 10 chars!</div>
 
-                <label class="labels" htmlFor="description">Description</label>
-                <textarea class="inputs" type="input" name="description" onChange={this.descriptionOnChangeHandler} value={this.state.description}></textarea>
+                <label class="labels" for="imageUrl">New image:</label>
+                <input #imageUrlInput="ngModel" ngModel class="inputs" type="url" name="imageUrl" [value]="cause.imageUrl" />
+                <div *ngIf="imageUrlInput.errors?.required && imageUrlInput.touched" class="errors">Image url is
+                    required!</div>
+
+                <button [disabled]="editCauseForm.invalid" class='create-button'>Edit cause</button>
             </form>
-            <div class='upload-image'>
-                <label class="labels" htmlFor="imageUrl">New cause picture</label>
-                <button id="upload_widget" class="cloudinary-button">Upload photo</button>
-
-                <button class='create-button' type="button" onClick={this.submitHandler}>Edit cause</button>
-            </div>
         </div>
     </div>
 </div>

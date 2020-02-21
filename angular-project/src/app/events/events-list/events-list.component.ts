@@ -9,14 +9,14 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class EventsListComponent implements OnInit {
 
-  get isLoged(){
+  get isLoged() {
     return this.userService.isLoged;
   }
 
   get events() {
     this.eventsService.events.map(event => {
       if (!this.userService.currentUser || event.author !== this.userService.currentUser._id)
-      event.author = undefined;
+        event.author = undefined;
       event.description = event.description.split(' ').slice(0, 30).join(' ') + '..';
     })
     return this.eventsService.events;
@@ -28,5 +28,11 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit() {
     this.eventsService.load();
+  }
+
+  delete(id) {
+    this.eventsService.delete(id).subscribe(() => {
+      this.eventsService.load();
+    })
   }
 }

@@ -71,14 +71,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 60%;
+    border: solid 1px green;
+    margin-left: 6em;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 .profile-container .cause{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 60%;
+    border: solid 1px green;
+    margin-left: 6em;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 .null-causes{
@@ -202,4 +210,8 @@
     width: 100%;
     justify-content: space-around;
     margin-bottom: 50px;
+}
+
+.delete:hover{
+    cursor: pointer;
 }

@@ -21,7 +21,7 @@ When the project is cloned or downloaded, type in the terminal the following:
 
 ```npm install```
 
-## Run the React app
+## Run the Angular app
 
 The app uses Angular on client side. To run the Angular app, type in the terminal the following:
 
